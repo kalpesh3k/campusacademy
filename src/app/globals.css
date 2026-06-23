@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f6fc;
+  --foreground: #1c1124;
+  
+  --primary: #3d1054;
+  --primary-light: #5b217a;
+  --primary-dark: #230833;
+  --primary-glow: rgba(91, 33, 122, 0.08);
+  
+  --secondary: #ff6b35;
+  --secondary-glow: rgba(255, 107, 53, 0.08);
+  
+  --accent: #ffb800;
+  
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(61, 16, 84, 0.08);
+  --nav-bg: rgba(248, 246, 252, 0.8);
+  --badge-bg: rgba(255, 107, 53, 0.1);
+  --badge-text: #e04b16;
+}
+
+.dark {
+  --background: #0d0614;
+  --foreground: #f4effb;
+  
+  --primary: #ab60d6;
+  --primary-light: #c084fc;
+  --primary-dark: #07030b;
+  --primary-glow: rgba(171, 96, 214, 0.15);
+  
+  --secondary: #ff8552;
+  --secondary-glow: rgba(255, 133, 82, 0.15);
+  
+  --accent: #ffd154;
+  
+  --card-bg: rgba(20, 11, 30, 0.7);
+  --card-border: rgba(171, 96, 214, 0.15);
+  --nav-bg: rgba(13, 6, 20, 0.85);
+  --badge-bg: rgba(255, 133, 82, 0.15);
+  --badge-text: #ff9f75;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-glow: var(--primary-glow);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-glow: var(--secondary-glow);
+  
+  --color-accent: var(--accent);
+  
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-nav-bg: var(--nav-bg);
+  --color-badge-bg: var(--badge-bg);
+  --color-badge-text: var(--badge-text);
+  
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-heading: var(--font-outfit), system-ui, sans-serif;
+}
+
+/* Custom styles and overrides */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(61, 16, 84, 0.2);
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(171, 96, 214, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(61, 16, 84, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(171, 96, 214, 0.4);
+}
+
+/* Text glow and decorative blur effects */
+.glow-blur {
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Printing styles for document checklist */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
