@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -78,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${plusJakarta.variable}`}>
       <head>
-        {/* Google Analytics */}
+        <GoogleAnalytics gaId="G-QV9V7P03H4" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
